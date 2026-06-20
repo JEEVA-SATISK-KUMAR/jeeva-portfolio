@@ -20,7 +20,7 @@ export function Hero() {
           <a className="button button-primary" href="#case-files">
             Explore case files <ArrowDownRight size={17} />
           </a>
-          <a className="button button-secondary" href="/Jeeva-Satishkumar-Resume.pdf" target="_blank">
+          <a className="button button-secondary" href="/resume.pdf" target="_blank">
             <Download size={16} /> Resume.pdf
           </a>
         </div>
