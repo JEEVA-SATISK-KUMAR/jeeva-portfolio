@@ -14,7 +14,7 @@ export function ProjectCaseFiles() {
       <SectionHeading
         eyebrow="SELECTED OPERATIONS"
         title="Project case files"
-        description="Five applied investigations across healthcare, cloud BI, supply-chain forecasting, EEG machine learning, and pricing automation."
+        description="Six formal case studies connecting analytical methods to decisions, recommendations, and practical business value."
       />
 
       <div className="case-layout">
@@ -49,12 +49,16 @@ export function ProjectCaseFiles() {
           </div>
           <p className="case-category">{activeProject.category}</p>
           <h3>{activeProject.title}</h3>
-          <p className="case-summary">{activeProject.summary}</p>
 
           <div className="case-narrative">
-            <div><span>01 / SIGNAL</span><p>{activeProject.challenge}</p></div>
-            <div><span>02 / SYSTEM</span><p>{activeProject.solution}</p></div>
-            <div><span>03 / OUTCOME</span><p>{activeProject.impact}</p></div>
+            <div><span>01 / BUSINESS PROBLEM</span><p>{activeProject.caseStudy.businessProblem}</p></div>
+            <div><span>02 / DATASET</span><p>{activeProject.caseStudy.dataset}</p></div>
+            <div><span>03 / KPIs</span><p>{activeProject.caseStudy.kpis}</p></div>
+            <div><span>04 / ANALYSIS</span><p>{activeProject.caseStudy.analysis}</p></div>
+            <div><span>05 / DASHBOARD</span><p>{activeProject.caseStudy.dashboard}</p></div>
+            <div><span>06 / KEY INSIGHT</span><p>{activeProject.caseStudy.keyInsight}</p></div>
+            <div><span>07 / RECOMMENDATION</span><p>{activeProject.caseStudy.recommendation}</p></div>
+            <div><span>08 / IMPACT</span><p>{activeProject.caseStudy.impact}</p></div>
           </div>
 
           <div className="case-metrics">

@@ -10,7 +10,7 @@ const commandList = [
   "help", "about", "skills", "projects", "experience", "education", "certifications",
   "publication", "linkedin", "contact", "healthcare", "supply chain", "analytics lab",
   "summary", "resume", "target roles",
-  "case airline", "case healthcare", "case neuro", "case cloud", "case finance",
+  "case airline", "case neuro", "case cloud", "case traffic", "case finance", "case sales",
 ];
 
 function resolveCommand(rawCommand: string): string {

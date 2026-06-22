@@ -1,14 +1,21 @@
 export type Project = {
-  id: "airline" | "healthcare" | "neuro" | "cloud" | "finance";
+  id: "neuro" | "cloud" | "traffic" | "airline" | "finance" | "sales";
   index: string;
   title: string;
   shortTitle: string;
   category: string;
   status: string;
   summary: string;
-  challenge: string;
-  solution: string;
-  impact: string;
+  caseStudy: {
+    businessProblem: string;
+    dataset: string;
+    kpis: string;
+    analysis: string;
+    dashboard: string;
+    keyInsight: string;
+    recommendation: string;
+    impact: string;
+  };
   metrics: { label: string; value: string }[];
   stack: string[];
   accent: "cyan" | "violet" | "amber";
@@ -16,89 +23,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "healthcare",
-    index: "01",
-    title: "Healthcare KPI Analytics Dashboard",
-    shortTitle: "Healthcare KPI Analytics",
-    category: "Healthcare Analytics",
-    status: "DECISION READY",
-    summary:
-      "Healthcare analytics project focused on clinical and claims datasets, KPI visibility, agreement-level tracking, product and client reporting, and stakeholder decision support.",
-    challenge:
-      "Clinical and claims data required clear, governed metrics before teams could consistently understand performance and service-level expectations.",
-    solution:
-      "Analyzed healthcare datasets with SQL and dashboards, structuring KPI, trend, and agreement-level views for product and client reporting.",
-    impact:
-      "Improved metric visibility and delivered clearer decision support for cross-functional stakeholders.",
-    metrics: [
-      { label: "Data", value: "Claims + Clinical" },
-      { label: "Focus", value: "KPI visibility" },
-      { label: "Output", value: "Client reporting" },
-    ],
-    stack: ["SQL", "Power BI", "Healthcare Analytics", "KPI Design"],
-    accent: "violet",
-  },
-  {
-    id: "cloud",
-    index: "02",
-    title: "Cloud BI Pipeline",
-    shortTitle: "Cloud BI Pipeline",
-    category: "Analytics Engineering",
-    status: "ORCHESTRATED",
-    summary:
-      "Data pipeline and BI reporting project using Azure Data Factory, Microsoft Fabric, Power BI, SQL warehousing patterns, star schema modeling, and incremental loads.",
-    challenge:
-      "Analytics data needed reliable ingestion, modeled storage, and efficient refresh patterns to support scalable reporting.",
-    solution:
-      "Designed a star-schema workflow with Azure Data Factory orchestration, Microsoft Fabric, SQL warehousing, and incremental loads.",
-    impact:
-      "Created a repeatable path from source data to trusted, refreshable Power BI reporting.",
-    metrics: [
-      { label: "Orchestration", value: "Azure Data Factory" },
-      { label: "Model", value: "Star schema" },
-      { label: "Refresh", value: "Incremental" },
-    ],
-    stack: ["Azure Data Factory", "Microsoft Fabric", "Power BI", "SQL"],
-    accent: "cyan",
-  },
-  {
-    id: "airline",
-    index: "03",
-    title: "Forecasting and Operations Analytics",
-    shortTitle: "Forecasting & Operations",
-    category: "Supply Chain Analytics",
-    status: "MODEL READY",
-    summary:
-      "Forecasting project focused on demand prediction, supply-chain planning, scenario analysis, and operational decision support.",
-    challenge:
-      "Variable demand and operational constraints made planning difficult without a structured forecasting and scenario-analysis framework.",
-    solution:
-      "Built forecasting models and decision scenarios to translate demand signals into actionable supply-chain and operations planning inputs.",
-    impact:
-      "Connected model output to practical operational decisions, resource planning, and performance measurement.",
-    metrics: [
-      { label: "Focus", value: "Demand prediction" },
-      { label: "Context", value: "Supply chain" },
-      { label: "Output", value: "Planning support" },
-    ],
-    stack: ["Python", "R", "Time Series", "Scenario Analysis"],
-    accent: "cyan",
-  },
-  {
     id: "neuro",
-    index: "04",
-    title: "EEG-Based Emotion Prediction",
-    shortTitle: "EEG Emotion Prediction",
+    index: "01",
+    title: "EEG-Based Emotion Analytics for Creative Strategy",
+    shortTitle: "EEG Emotion Analytics",
     category: "Machine Learning",
     status: "VALIDATED",
-    summary:
-      "Machine learning project using Random Forest and XGBoost to predict emotional direction from 22 EEG time-series features, with an R Shiny application for non-technical stakeholders.",
-    challenge:
-      "Non-technical stakeholders needed a practical way to explore complex EEG model outputs and connect predictions to business decisions.",
-    solution:
-      "Engineered Random Forest and XGBoost models and delivered predictions through an interactive R Shiny stakeholder application.",
-    impact:
-      "Made sophisticated emotion-model outputs accessible and useful to non-technical decision-makers.",
+    summary: "Emotion classification and stakeholder-facing analytics for creative strategy.",
+    caseStudy: {
+      businessProblem: "Creative teams needed a clearer way to evaluate emotional response to ad content.",
+      dataset: "EEG-based neural metrics with 22 time-series features.",
+      kpis: "Emotional direction, discrete emotion, and classification performance.",
+      analysis: "Random Forest and XGBoost multi-stage classification pipeline.",
+      dashboard: "R Shiny app for training-data upload and test-set predictions.",
+      keyInsight: "EEG signals can quantify emotional response patterns in creative content.",
+      recommendation: "Use model outputs to compare narrative and campaign design choices.",
+      impact: "Enabled predictive creative insights for non-technical stakeholders.",
+    },
     metrics: [
       { label: "Features", value: "22 EEG signals" },
       { label: "Models", value: "RF + XGBoost" },
@@ -108,26 +49,134 @@ export const projects: Project[] = [
     accent: "amber",
   },
   {
-    id: "finance",
-    index: "05",
-    title: "Cost Optimization and Pricing Automation",
-    shortTitle: "Pricing Automation",
-    category: "Operations Analytics",
-    status: "PRODUCTION IMPACT",
-    summary:
-      "Excel VBA and macros project integrating procurement, inventory, supplier, and pricing data to improve pricing accuracy by 15%, reduce business risk by 20%, and cut manual effort by 30%.",
-    challenge:
-      "Manual estimation workflows slowed quote turnaround and limited consistency across pricing, supplier, and inventory inputs.",
-    solution:
-      "Automated and standardized estimation workflows with Excel VBA and macros while incorporating pricing trends and competitive intelligence.",
-    impact:
-      "Improved pricing accuracy by 15%, reduced business risk by 20%, and cut manual effort by 30%.",
+    id: "cloud",
+    index: "02",
+    title: "Cloud BI Pipeline & Reporting System with Azure, Fabric & Power BI",
+    shortTitle: "Cloud BI Pipeline",
+    category: "Analytics Engineering",
+    status: "ORCHESTRATED",
+    summary: "An end-to-end cloud BI workflow for governed sales reporting.",
+    caseStudy: {
+      businessProblem: "Sales reporting needed an automated, cloud-native analytics workflow.",
+      dataset: "AdventureWorks data loaded into a cloud data warehouse.",
+      kpis: "Sales performance, trends, and executive reporting measures.",
+      analysis: "Automated ETL, SQL warehousing, data modeling, and advanced DAX.",
+      dashboard: "Power BI reports with drillthroughs, bookmarks, and KPI views.",
+      keyInsight: "Integrated cloud pipelines improve reporting consistency and access.",
+      recommendation: "Use governed refresh workflows for repeatable self-service BI.",
+      impact: "Enabled executive-level sales insights and performance tracking.",
+    },
     metrics: [
-      { label: "Accuracy", value: "+15%" },
-      { label: "Manual effort", value: "−30%" },
-      { label: "Business risk", value: "−20%" },
+      { label: "Source", value: "AdventureWorks" },
+      { label: "Pipeline", value: "Azure + Fabric" },
+      { label: "Reporting", value: "Power BI" },
     ],
-    stack: ["Excel VBA", "Macros", "Forecasting", "Pricing Analytics"],
+    stack: ["Azure Data Factory", "Microsoft Fabric", "Power BI", "DAX", "SQL"],
+    accent: "cyan",
+  },
+  {
+    id: "traffic",
+    index: "03",
+    title: "Traffic Collision Analysis & Visualization for Dallas",
+    shortTitle: "Dallas Collision Analysis",
+    category: "Geospatial Analytics",
+    status: "DECISION READY",
+    summary: "Geospatial crash analysis supporting safer route and intersection decisions.",
+    caseStudy: {
+      businessProblem: "Road users and planners needed visibility into high-risk Dallas intersections.",
+      dataset: "Dallas Police Department Open Data Portal crash records.",
+      kpis: "Accident frequency, collision severity, location, and time period.",
+      analysis: "Geospatial analysis of crash concentration and severity patterns.",
+      dashboard: "Interactive Tableau views for peak and off-peak route analysis.",
+      keyInsight: "Collision risk concentrates at identifiable intersections and periods.",
+      recommendation: "Prioritize high-risk locations in planning and route decisions.",
+      impact: "Improved decision visibility for planners, commuters, and logistics teams.",
+    },
+    metrics: [
+      { label: "Data", value: "Dallas Open Data" },
+      { label: "Focus", value: "Risk locations" },
+      { label: "Output", value: "Route insight" },
+    ],
+    stack: ["Tableau", "Geospatial Analysis", "Data Storytelling"],
     accent: "violet",
   },
+  {
+    id: "airline",
+    index: "04",
+    title: "American Airlines Repairable Parts Forecasting",
+    shortTitle: "Repairable Parts Forecasting",
+    category: "Supply Chain Analytics",
+    status: "MODEL READY",
+    summary: "Time-series forecasting for repairable-parts planning and operational support.",
+    caseStudy: {
+      businessProblem: "Repairable-parts planning required more reliable demand visibility.",
+      dataset: "Historical repairable-parts demand and planning data.",
+      kpis: "Demand trend, forecast accuracy, and planning variance.",
+      analysis: "Time-series forecasting with operational scenario analysis.",
+      dashboard: "Forecast and planning views for part-level decision support.",
+      keyInsight: "Demand patterns vary across parts and planning periods.",
+      recommendation: "Use forecast signals to support inventory and repair planning.",
+      impact: "Supported supply-chain planning and operational decision-making.",
+    },
+    metrics: [
+      { label: "Focus", value: "Demand forecast" },
+      { label: "Context", value: "Repairable parts" },
+      { label: "Output", value: "Planning support" },
+    ],
+    stack: ["Python", "R", "Time Series", "Scenario Analysis"],
+    accent: "cyan",
+  },
+  {
+    id: "finance",
+    index: "05",
+    title: "Mεllon Portfolio Management Platform",
+    shortTitle: "Mεllon Portfolio Platform",
+    category: "Financial Analytics",
+    status: "INTERACTIVE",
+    summary: "A portfolio analytics platform combining structured data and conversational access.",
+    caseStudy: {
+      businessProblem: "Portfolio information was difficult to review without custom queries.",
+      dataset: "Structured portfolio holdings and transaction data.",
+      kpis: "Portfolio value, allocation, holdings, and performance trends.",
+      analysis: "Relational portfolio analysis and natural-language query workflows.",
+      dashboard: "Interactive portfolio views with a chatbot-to-SQL assistant.",
+      keyInsight: "Unified portfolio views make financial patterns easier to interpret.",
+      recommendation: "Centralize portfolio monitoring and guided data exploration.",
+      impact: "Enabled self-service portfolio analysis and decision visibility.",
+    },
+    metrics: [
+      { label: "Storage", value: "MySQL" },
+      { label: "Interface", value: "Dashboard + Chat" },
+      { label: "Access", value: "Natural language" },
+    ],
+    stack: ["MySQL", "Python", "Data Visualization", "NLP"],
+    accent: "violet",
+  },
+  {
+    id: "sales",
+    index: "06",
+    title: "Product Sales Analysis & Acquisition Strategy",
+    shortTitle: "Sales & Acquisition Strategy",
+    category: "Business Analytics",
+    status: "STRATEGY READY",
+    summary: "Statistical sales analysis supporting acquisition and growth decisions.",
+    caseStudy: {
+      businessProblem: "An acquisition decision required evidence on product sales performance.",
+      dataset: "Scraped and preprocessed product sales data.",
+      kpis: "Sales performance and factors influencing product results.",
+      analysis: "Statistical and exploratory analysis of sales drivers.",
+      dashboard: "Excel analysis views summarizing performance and acquisition factors.",
+      keyInsight: "Sales patterns revealed factors relevant to acquisition value.",
+      recommendation: "Use the identified drivers to guide investment evaluation.",
+      impact: "Enabled data-driven acquisition and growth recommendations.",
+    },
+    metrics: [
+      { label: "Method", value: "Statistical analysis" },
+      { label: "Focus", value: "Sales drivers" },
+      { label: "Output", value: "Acquisition insight" },
+    ],
+    stack: ["Excel", "Data Scraping", "Data Preprocessing", "Statistical Analysis"],
+    accent: "amber",
+  },
 ];
+
