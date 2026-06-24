@@ -8,7 +8,7 @@ type TerminalLine = { command?: string; output: string };
 
 const commandList = [
   "help", "about", "skills", "projects", "experience", "education", "certifications",
-  "publication", "linkedin", "contact", "healthcare", "supply chain", "analytics lab",
+  "publication", "linkedin", "contact", "healthcare", "supply chain",
   "summary", "resume", "target roles",
   "case airline", "case neuro", "case cloud", "case traffic", "case finance", "case sales",
 ];
@@ -35,7 +35,6 @@ function resolveCommand(rawCommand: string): string {
     certifications: "Foundations of Project Management · SolidWorks Essential · Basics in Programming · Microsoft Power BI Data Analyst · Agent Explorer",
     linkedin: "https://www.linkedin.com/in/jeeva-satish-kumar/",
     publication: "Analysis on a Battery Thermal Management System of a Lithium-Ion Powered Battery with Heat Sink for an Electric Vehicle",
-    "analytics lab": "Forecast Impact Simulator — adjust forecast accuracy, cost reduction, and operational improvement assumptions to evaluate projected business outcomes.",
     summary: "Jeeva Satish Kumar is a Business Analytics graduate focused on turning messy operational data into decision-ready insights. He works across healthcare, supply chain, operations, and BI contexts by analyzing clinical and claims data, building forecasting models, designing KPI dashboards, and translating stakeholder needs into measurable business outputs.\n\nWhat I bring to the table:\n- Strong analytical thinking across SQL, Python, R, Power BI, Tableau, Excel VBA, Azure Data Factory, and Microsoft Fabric\n- Ability to connect technical analysis with business context, stakeholder needs, and decision-making\n- Experience building dashboards, forecasting workflows, classification models, KPI frameworks, and data pipelines\n- Comfort working with ambiguous problems, defining the right metrics, structuring the data, and communicating insights clearly\n- A continuous-learning mindset with strong interest in improving my skills, adopting new tools, and learning from every project and team\n\nBest-fit roles:\nData Analyst, Business Analyst, BI Analyst, Healthcare Analytics Analyst, Supply Chain Analytics Analyst, and Operations Analytics Analyst.",
   };
 
