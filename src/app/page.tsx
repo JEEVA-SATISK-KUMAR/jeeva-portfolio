@@ -14,7 +14,7 @@ export default function Home() {
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Jeeva OS home"><span><Activity size={17} /></span><b>JEEVA</b><i>OS</i></a>
-        <nav aria-label="Primary navigation"><a href="#case-files">Cases</a><a href="#experience">Timeline</a><a href="#leadership">Leadership</a><a href="#skills">Stack</a><a href="#contact">Contact</a></nav>
+        <nav aria-label="Primary navigation"><a href="#case-files">Projects</a><a href="#experience">Timeline</a><a href="#leadership">Leadership</a><a href="#skills">Stack</a><a href="#contact">Contact</a></nav>
         <div className="header-status"><CircleDotDashed size={14} /><span>System online</span></div>
       </header>
       <main>
