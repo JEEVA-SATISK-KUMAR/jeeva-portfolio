@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDownRight, Download, Radio } from "lucide-react";
-import portrait from "../../public/jeeva-portrait.jpg";
+import portrait from "../../public/jeeva-portrait-cutout.png";
 
 const delay = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
@@ -29,7 +29,7 @@ export function Hero() {
           alt="Portrait of Jeeva Satish Kumar"
           priority
           placeholder="blur"
-          sizes="(max-width: 680px) 80vw, 420px"
+          sizes="(max-width: 680px) 80vw, 460px"
         />
       </div>
 
