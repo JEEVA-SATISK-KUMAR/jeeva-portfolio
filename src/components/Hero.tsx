@@ -4,6 +4,19 @@ import portrait from "../../public/jeeva-portrait-cutout.png";
 
 const delay = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
+// Decorative upward trend (no real values shown). Smoothed with Catmull-Rom → cubic Bézier.
+const trend = [118, 112, 120, 102, 106, 88, 94, 74, 78, 58, 52, 34].map((y, i) => ({ x: 8 + i * 38.5, y }));
+const last = trend[trend.length - 1];
+const trendPath = trend.reduce((d, point, i, all) => {
+  if (i === 0) return `M${point.x} ${point.y}`;
+  const p0 = all[i - 2] ?? all[i - 1];
+  const p1 = all[i - 1];
+  const p3 = all[i + 1] ?? point;
+  const c1 = `${(p1.x + (point.x - p0.x) / 6).toFixed(1)} ${(p1.y + (point.y - p0.y) / 6).toFixed(1)}`;
+  const c2 = `${(point.x - (p3.x - p1.x) / 6).toFixed(1)} ${(point.y - (p3.y - p1.y) / 6).toFixed(1)}`;
+  return `${d} C${c1} ${c2} ${point.x} ${point.y}`;
+}, "");
+
 export function Hero() {
   return (
     <section className="hero hero-editorial" id="top">
@@ -66,13 +79,13 @@ export function Hero() {
               <div className="core-label"><Radio size={14} aria-hidden="true" /> <span translate="no">JEEVA OS</span></div>
               <strong className="online"><span className="pulse-dot" aria-hidden="true" />ONLINE</strong>
             </div>
-            <p className="system-sub">Data Analyst · MSBA</p>
+            <p className="system-sub">Metrics that matter</p>
           </div>
-          <svg className="chart" viewBox="0 0 440 150" role="img" aria-label="Animated analytics waveform">
+          <svg className="chart" viewBox="0 0 440 150" role="img" aria-label="Upward trend line">
             <defs>
               <linearGradient id="wave-stroke" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0" className="stop-a" />
-                <stop offset="0.55" className="stop-b" />
+                <stop offset="0.6" className="stop-b" />
                 <stop offset="1" className="stop-c" />
               </linearGradient>
               <linearGradient id="wave-fill" x1="0" y1="0" x2="0" y2="1">
@@ -80,10 +93,12 @@ export function Hero() {
                 <stop offset="1" className="fill-b" />
               </linearGradient>
             </defs>
-            {[30, 75, 120].map((y) => <line key={y} className="grid" x1="0" x2="440" y1={y} y2={y} />)}
-            <path className="area" d="M0 90 C30 88 38 85 55 89 S82 100 100 86 S125 47 143 82 S169 124 191 78 S219 12 242 76 S273 136 296 80 S330 52 351 85 S395 95 440 88 L440 150 L0 150 Z" />
-            <path className="line" pathLength={1} d="M0 90 C30 88 38 85 55 89 S82 100 100 86 S125 47 143 82 S169 124 191 78 S219 12 242 76 S273 136 296 80 S330 52 351 85 S395 95 440 88" />
-            <circle className="peak" cx="231" cy="38" r="4.5" />
+            {[22, 64, 106, 148].map((y) => <line key={y} className="grid" x1="0" x2="440" y1={y} y2={y} />)}
+            <path className="area" d={`${trendPath} L${last.x} 150 L${trend[0].x} 150 Z`} />
+            <path className="line" pathLength={1} d={trendPath} />
+            {trend.slice(0, -1).map((point) => <circle key={point.x} className="point" cx={point.x} cy={point.y} r="2.5" />)}
+            <circle className="peak-ring" cx={last.x} cy={last.y} r="9" />
+            <circle className="peak" cx={last.x} cy={last.y} r="4.5" />
           </svg>
           <ul className="signal-list">
             <li style={{ "--dot": "var(--blue)" } as React.CSSProperties}><span>HEALTHCARE</span><b>Claims + Clinical</b></li>
