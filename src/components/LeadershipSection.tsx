@@ -9,23 +9,20 @@ export function LeadershipSection() {
         title="Leadership & Campus Engagement"
         description="Campus leadership experience across student clubs, event operations, creative media, and digital engagement."
       />
-      <div className="timeline">
+      <div className="card-grid">
         {leadership.map((item, index) => (
-          <article className="timeline-item" key={`${item.period}-${item.role}`}>
-            <div className="timeline-rail">
+          <article className="info-card spotlight" key={`${item.period}-${item.role}`} data-reveal style={{ "--d": `${index * 90}ms` } as React.CSSProperties}>
+            <div className="info-card-top">
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <i />
+              <b>{item.period}</b>
             </div>
-            <div className="timeline-period">{item.period}</div>
-            <div className="timeline-content">
-              <p>{item.organization}</p>
-              <h3>{item.role}</h3>
-              <p className="timeline-description">{item.description}</p>
-              <div className="timeline-tags">
-                {item.highlights.map((highlight) => (
-                  <span key={highlight}>{highlight}</span>
-                ))}
-              </div>
+            <p className="org">{item.organization}</p>
+            <h3>{item.role}</h3>
+            <p>{item.description}</p>
+            <div className="card-tags">
+              {item.highlights.map((highlight) => (
+                <span className="chip" key={highlight}>{highlight}</span>
+              ))}
             </div>
           </article>
         ))}
