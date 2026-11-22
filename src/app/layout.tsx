@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bodoni_Moda, Geist, Geist_Mono, Great_Vibes } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const display = Bodoni_Moda({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600"] });
+const script = Great_Vibes({ subsets: ["latin"], variable: "--font-script", weight: "400" });
 
 const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -34,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" data-theme="dark" className={`${geistSans.variable} ${geistMono.variable} ${display.variable} ${script.variable}`} suppressHydrationWarning>
       <body>
         <Script id="theme-boot" strategy="beforeInteractive">{bootScript}</Script>
         {children}
