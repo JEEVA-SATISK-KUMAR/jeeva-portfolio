@@ -63,12 +63,13 @@ export function Hero() {
 
       <div className="hero-aside" data-reveal style={delay(260)}>
         <p className="hero-intro">
-          <strong>Jeeva Satish Kumar</strong><br />Business Analytics graduate focused on healthcare analytics, supply chain analytics, forecasting, BI dashboards, and data pipelines. I turn messy operational data into clear metrics, executive ready dashboards, and decision support systems.
+          <strong>Jeeva Satish Kumar</strong><br />Business Analytics graduate focused on healthcare analytics, supply chain analytics, forecasting, BI dashboards, and data pipelines. I turn messy operational data into clear metrics, executive ready dashboards, and decision support systems. Currently operating robotic systems in a research lab, producing clean training data for robot learning models.
         </p>
         <div className="hero-meta" aria-label="Professional focus">
           <span><b>01</b> Business + Data Analyst</span>
           <span><b>02</b> Healthcare + Supply Chain</span>
           <span><b>03</b> Operations + BI Analyst</span>
+          <span><b>04</b> Robotics + AI Data</span>
         </div>
       </div>
 
@@ -104,6 +105,7 @@ export function Hero() {
             <li style={{ "--dot": "var(--blue)" } as React.CSSProperties}><span>HEALTHCARE</span><b>Claims + Clinical</b></li>
             <li style={{ "--dot": "var(--purple)" } as React.CSSProperties}><span>FORECASTS</span><b>Decision ready</b></li>
             <li style={{ "--dot": "var(--pink)" } as React.CSSProperties}><span>DASHBOARDS</span><b>Executive ready</b></li>
+            <li style={{ "--dot": "var(--amber)" } as React.CSSProperties}><span>ROBOTICS</span><b>AI training data</b></li>
           </ul>
         </div>
       </div>

@@ -30,4 +30,10 @@ export const skillGroups: SkillGroup[] = [
     description: "Governed data pipelines and SQL warehousing patterns supporting supply-chain and operational decisions.",
     skills: ["SQL", "Azure Data Factory", "Microsoft Fabric", "Azure Service Fabric", "SQL Warehousing Patterns", "Supply Chain Analytics", "Operations Analytics", "Excel VBA", "Cost and Price Estimation"],
   },
+  {
+    title: "Robotics & AI Data",
+    code: "RB.05",
+    description: "Hands-on robot operation and data collection for robot learning, backed by a mechanical engineering and automation foundation.",
+    skills: ["Robot Teleoperation", "Robotics Data Collection", "Training Data Quality", "Fault Detection + Reporting", "Lab Procedures + SOPs", "Lab Safety", "Pneumatics + Hydraulics", "Mechanical Systems"],
+  },
 ];

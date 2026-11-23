@@ -10,6 +10,16 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    period: "SEP 2026 — PRESENT",
+    role: "Lab Robotic Operator",
+    organization: "Apex Systems (client: OpenAI)",
+    location: "California · On-site",
+    description:
+      "Operate and monitor robotic systems in a lab that supports robotics research and development. Teleoperate robot arms, run data-collection episodes, and reset scenes between runs to capture high-quality data. Monitor system performance, flag faults, and follow structured lab procedures to keep results consistent. Coordinate with engineers and researchers to deliver cleaner training datasets for robot learning models, building on my mechanical engineering background and analytics training in a hands-on robotics environment.",
+    highlights: ["Robot teleoperation", "Data collection", "Fault monitoring"],
+    active: true,
+  },
+  {
     period: "AUG 2025 — PRESENT",
     role: "Analytics Consultant (Graduate)",
     organization: "Southern Methodist University",

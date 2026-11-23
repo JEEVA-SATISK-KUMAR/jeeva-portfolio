@@ -1,14 +1,14 @@
-import { Binary, Boxes, ChartNoAxesCombined, CloudCog } from "lucide-react";
+import { Binary, Bot, Boxes, ChartNoAxesCombined, CloudCog } from "lucide-react";
 import { skillGroups } from "@/data/skills";
 import { SectionHeading } from "./SectionHeading";
 
-const icons = [Boxes, ChartNoAxesCombined, Binary, CloudCog];
-const tints = ["var(--blue)", "var(--purple)", "var(--pink)", "var(--amber)"];
+const icons = [Boxes, ChartNoAxesCombined, Binary, CloudCog, Bot];
+const tints = ["var(--blue)", "var(--purple)", "var(--pink)", "var(--amber)", "var(--green)"];
 
 export function SkillsGrid() {
   return (
     <section className="section" id="skills">
-      <SectionHeading eyebrow="SYSTEM CAPABILITIES" title="The analytics stack" description="KPI investigation, forecasting, BI delivery, governed pipelines, and stakeholder execution across healthcare, supply-chain, and operations contexts." />
+      <SectionHeading eyebrow="SYSTEM CAPABILITIES" title="The analytics stack" description="KPI investigation, forecasting, BI delivery, governed pipelines, robotics data collection, and stakeholder execution across healthcare, supply-chain, operations, and robotics contexts." />
       <div className="skills-grid" data-reveal>
         {skillGroups.map((group, index) => {
           const Icon = icons[index];

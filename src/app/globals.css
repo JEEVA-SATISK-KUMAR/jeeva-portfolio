@@ -504,6 +504,7 @@ main:focus { outline: none; }
   transition: border-color 0.2s, box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
 }
 .skill-card:nth-child(1), .skill-card:nth-child(4) { grid-column: span 2; }
+.skill-card:nth-child(5) { grid-column: 1 / -1; }
 .skill-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
 .skill-card::before {
   content: ""; position: absolute; top: -120px; right: -80px; width: 260px; height: 260px; border-radius: 50%;

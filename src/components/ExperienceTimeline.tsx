@@ -5,7 +5,7 @@ import { SectionHeading } from "./SectionHeading";
 export function ExperienceTimeline() {
   return (
     <section className="section" id="experience">
-      <SectionHeading eyebrow="OPERATING HISTORY" title="Experience timeline" description="Professional experience spanning healthcare data, analytics education, operations, machine learning, pricing automation, and engineering." />
+      <SectionHeading eyebrow="OPERATING HISTORY" title="Experience timeline" description="Professional experience spanning healthcare data, analytics education, robotics operations, machine learning, pricing automation, and engineering." />
       <ol className="timeline">
         {experience.map((item, index) => (
           <li className="timeline-item" key={`${item.period}-${item.role}`} data-reveal>
